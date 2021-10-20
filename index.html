@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubiks Cube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="stage">
+        <div id="cube">
+            <!-- first layer -->
+            <div class="cubie" id="wb" data-type="edge">
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wbr" data-type="corner" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wbo" data-type="corner" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="w" data-type="center" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wo" data-type="edge" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wog" data-type="corner" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wg" data-type="edge" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wgr" data-type="corner" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="wr" data-type="edge" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div style="--color: white" class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <!-- second layer -->
+            <div class="cubie" id="b" data-type="center" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="bo" data-type="edge" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="br" data-type="edge" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="r" data-type="center" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="o" data-type="center" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="og" data-type="edge" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="rg" data-type="edge" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <div class="cubie" id="g" data-type="center" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
+            <!-- third layer -->
+            <div class="cubie" id="yb" data-type="edge">
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="ybr" data-type="corner" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="ybo" data-type="corner" >
+                <div style="--color: blue" class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="y" data-type="center" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="yo" data-type="edge" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="yog" data-type="corner" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div class="face left"></div>
+                <div style="--color: orange" class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="yg" data-type="edge" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="ygr" data-type="corner" >
+                <div class="face front"></div>
+                <div style="--color: green" class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+            <div class="cubie" id="yr" data-type="edge" >
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div style="--color: red" class="face left"></div>
+                <div class="face right"></div>
+                <div class="face top"></div>
+                <div style="--color: yellow" class="face bottom"></div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>

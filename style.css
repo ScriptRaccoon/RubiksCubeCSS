@@ -1,0 +1,244 @@
+/* general stuff */
+
+:root {
+    --cubie-size: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* stage */
+
+#stage {
+    min-width: 100vw;
+    min-height: 100vh;
+    perspective: calc(10 * var(--cubie-size));
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* cube */
+
+#cube {
+    transform-style: inherit;
+    animation: cube-rotation 35s linear infinite;
+}
+
+@keyframes cube-rotation {
+    from {
+        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateY(1080deg) rotateX(360deg) rotateZ(-360deg);
+    }
+}
+
+/* cubie */
+
+.cubie {
+    transform-style: inherit;
+}
+
+.cubie .face {
+    position: absolute;
+    width: var(--cubie-size);
+    height: var(--cubie-size);
+    background: #525650;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease;
+}
+
+.cubie .face::before {
+    content: "";
+    width: 92%;
+    height: 92%;
+    border-radius: calc(0.1 * var(--cubie-size));
+    background: var(--color);
+}
+
+.cubie .face:hover {
+    box-shadow: 0px 0px calc(0.3 * var(--cubie-size)) white;
+}
+
+/* 6 faces */
+
+.cubie .face.front {
+    transform: translateX(-50%) translateY(-50%)
+        translateZ(calc(0.5 * var(--cubie-size)));
+}
+
+.cubie .face.back {
+    transform: translateX(-50%) translateY(-50%)
+        translateZ(calc(-0.5 * var(--cubie-size)));
+}
+
+.cubie .face.left {
+    transform: translateX(calc(-50% + (-0.5) * var(--cubie-size)))
+        translateY(-50%) rotateY(-90deg);
+}
+
+.cubie .face.right {
+    transform: translateX(calc(-50% + (0.5) * var(--cubie-size)))
+        translateY(-50%) rotateY(90deg);
+}
+
+.cubie .face.top {
+    transform: translateX(-50%)
+        translateY(calc(-50% + (-0.5) * var(--cubie-size)))
+        rotateX(90deg);
+}
+
+.cubie .face.bottom {
+    transform: translateX(-50%)
+        translateY(calc(-50% + 0.5 * var(--cubie-size)))
+        rotateX(90deg);
+}
+
+/* cubies in first layer */
+
+#w {
+    transform: translateY(calc((-1) * var(--cubie-size)));
+}
+
+#wb {
+    transform: translateY(calc((-1) * var(--cubie-size)))
+        translateZ(var(--cubie-size));
+}
+
+#wbr {
+    transform: translateY(calc((-1) * var(--cubie-size)))
+        translateX(calc((-1) * var(--cubie-size)))
+        translateZ(var(--cubie-size));
+}
+
+#wbo {
+    transform: translateX(var(--cubie-size))
+        translateY(calc((-1) * var(--cubie-size)))
+        translateZ(var(--cubie-size));
+}
+
+#wo {
+    transform: translateX(var(--cubie-size))
+        translateY(calc((-1) * var(--cubie-size)));
+}
+
+#wog {
+    transform: translateX(var(--cubie-size))
+        translateY(calc((-1) * var(--cubie-size)))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#wg {
+    transform: translateY(calc((-1) * var(--cubie-size)))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#wgr {
+    transform: translateX(calc((-1) * var(--cubie-size)))
+        translateY(calc((-1) * var(--cubie-size)))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#wr {
+    transform: translateX(calc((-1) * var(--cubie-size)))
+        translateY(calc((-1) * var(--cubie-size)));
+}
+
+/* cubies in second layer */
+
+#b {
+    transform: translateZ(var(--cubie-size));
+}
+
+#bo {
+    transform: translateX(var(--cubie-size))
+        translateZ(var(--cubie-size));
+}
+
+#br {
+    transform: translateX(calc((-1) * var(--cubie-size)))
+        translateZ(var(--cubie-size));
+}
+
+#r {
+    transform: translateX(calc((-1) * var(--cubie-size)));
+}
+
+#o {
+    transform: translateX(var(--cubie-size));
+}
+
+#og {
+    transform: translateX(var(--cubie-size))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#rg {
+    transform: translateX(calc((-1) * var(--cubie-size)))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#g {
+    transform: translateZ(calc((-1) * var(--cubie-size)));
+}
+
+/* cubies in third layer */
+
+#y {
+    transform: translateY(var(--cubie-size));
+}
+
+#yb {
+    transform: translateY(var(--cubie-size))
+        translateZ(var(--cubie-size));
+}
+
+#ybr {
+    transform: translateY(var(--cubie-size))
+        translateX(calc((-1) * var(--cubie-size)))
+        translateZ(var(--cubie-size));
+}
+
+#ybo {
+    transform: translateX(var(--cubie-size))
+        translateY(var(--cubie-size)) translateZ(var(--cubie-size));
+}
+
+#yo {
+    transform: translateX(var(--cubie-size))
+        translateY(var(--cubie-size));
+}
+
+#yog {
+    transform: translateX(var(--cubie-size))
+        translateY(var(--cubie-size))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#yg {
+    transform: translateY(var(--cubie-size))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#ygr {
+    transform: translateX(calc((-1) * var(--cubie-size)))
+        translateY(var(--cubie-size))
+        translateZ(calc((-1) * var(--cubie-size)));
+}
+
+#yr {
+    transform: translateX(calc((-1) * var(--cubie-size)))
+        translateY(var(--cubie-size));
+}
