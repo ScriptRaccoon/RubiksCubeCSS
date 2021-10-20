@@ -1,8 +1,12 @@
 import { CUBIE_LIST } from "./cubies.js";
 
+let canRotate = true;
+
 const rotationSpeed = 2000; // 200
 
 export function rotateLeftLayer(orientation) {
+    if (!canRotate) return;
+    canRotate = false;
     const relevantCubies = CUBIE_LIST.filter(
         (cubie) => cubie.coords[0] == -1
     );
@@ -16,6 +20,7 @@ export function rotateLeftLayer(orientation) {
         setTimeout(() => {
             const coordTransform = ([x, y, z]) => [x, z, -y];
             cubie.coords = coordTransform(cubie.coords);
-        }, rotationSpeed);
+            canRotate = true;
+        }, rotationSpeed + 10);
     }
 }
