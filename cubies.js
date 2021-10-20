@@ -7,7 +7,7 @@ const FACE_NAMES = [
     "right",
 ];
 
-const CUBIE_LIST = [
+export const CUBIE_LIST = [
     {
         id: "w",
         type: "center",
@@ -206,7 +206,7 @@ const CUBIE_LIST = [
         },
     },
     {
-        id: "wbr",
+        id: "ybr",
         type: "corner",
         coords: [-1, 1, 1],
         colors: {
@@ -216,7 +216,7 @@ const CUBIE_LIST = [
         },
     },
     {
-        id: "wbo",
+        id: "ybo",
         type: "corner",
         coords: [1, 1, 1],
         colors: {
@@ -226,7 +226,7 @@ const CUBIE_LIST = [
         },
     },
     {
-        id: "wgr",
+        id: "ygr",
         type: "corner",
         coords: [-1, 1, -1],
         colors: {
@@ -236,7 +236,7 @@ const CUBIE_LIST = [
         },
     },
     {
-        id: "wgo",
+        id: "ygo",
         type: "corner",
         coords: [1, 1, -1],
         colors: {
@@ -249,10 +249,10 @@ const CUBIE_LIST = [
 
 export function generateCubies() {
     for (const cubie of CUBIE_LIST) {
+        cubie.originalCoords = [...cubie.coords];
         const cubieElement = $("<div></div>")
             .addClass("cubie")
-            .attr("data-type", cubie.type)
-            .attr("data-coords", cubie.coords.toString())
+            .attr("id", cubie.id)
             .css(
                 "transform",
                 `translateX(calc(${cubie.coords[0]} * var(--cubie-size)))

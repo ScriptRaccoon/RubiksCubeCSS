@@ -1,4 +1,6 @@
-import { generateCubies } from "./cubies.js";
+import { generateCubies, CUBIE_LIST } from "./cubies.js";
+
+const rotationSpeed = 2000; // 200
 
 const STATUS = {
     cubeRotationX: -45,
@@ -51,7 +53,6 @@ function init() {
 function handleKeyDown() {
     document.addEventListener("keydown", (e) => {
         if (!ALLOWED_KEYS.includes(e.key)) return;
-        console.log(e.key);
         KEY_MAP[e.key]();
     });
 }
@@ -66,6 +67,19 @@ function applyRotationToCube() {
 }
 
 function rotateLeftLayer(orientation) {
-    console.log("gonna rotate left layer");
-    console.log({ orientation });
+    const relevantCubies = CUBIE_LIST.filter(
+        (cubie) => cubie.coords[0] == -1
+    );
+    const angle = orientation == +1 ? "-90deg" : "90deg";
+    for (const cubie of relevantCubies) {
+        const cubieElement = $(`#${cubie.id}`);
+        const currentTransform = cubieElement.css("transform");
+        cubieElement.css({
+            transform: `rotateX(${angle}) ` + currentTransform,
+        });
+        setTimeout(() => {
+            const coordTransform = ([x, y, z]) => [x, z, -y];
+            cubie.coords = coordTransform(cubie.coords);
+        }, rotationSpeed);
+    }
 }

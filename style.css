@@ -84,6 +84,8 @@ body {
 
 .cubie {
     transform-style: inherit;
+    /* 200ms */
+    transition: transform 2000ms ease-in-out;
 }
 
 .cubie .face {
