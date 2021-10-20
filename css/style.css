@@ -13,6 +13,7 @@
 body {
     background-color: black;
     color: white;
+    overflow: hidden;
 }
 
 /* help */
@@ -36,7 +37,7 @@ body {
     box-shadow: 0px 0px 20px black;
     opacity: 0;
     transform-origin: top;
-    transition: all 500ms ease-out;
+    transition: opacity 500ms ease-out;
 }
 
 #helpToggler:checked ~ label i {
@@ -60,10 +61,15 @@ body {
     margin-top: 10px;
 }
 
+/* main */
+
+main {
+    transition: transform 100ms linear;
+}
+
 /* stage */
 
 #stage {
-    min-width: 100vw;
     min-height: 100vh;
     perspective: calc(10 * var(--cubie-size));
     transform-style: preserve-3d;
