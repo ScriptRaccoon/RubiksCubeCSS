@@ -89,7 +89,7 @@ body {
     position: absolute;
     width: var(--cubie-size);
     height: var(--cubie-size);
-    background: #525650;
+    background: #555;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,7 +104,7 @@ body {
     background: var(--color);
 }
 
-.cubie .face:hover {
+.cubie:hover .face {
     box-shadow: 0px 0px calc(0.3 * var(--cubie-size)) white;
 }
 

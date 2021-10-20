@@ -1,3 +1,5 @@
+import { generateCubies } from "./cubies.js";
+
 const STATUS = {
     cubeRotationX: -45,
     cubeRotationY: 45,
@@ -22,8 +24,9 @@ const ALLOWED_KEYS = Object.keys(KEY_MAP);
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
+    generateCubies();
     handleKeyDown();
-    console.log($("#cube").css("transform"));
+    handleCubieClick();
 }
 
 function handleKeyDown() {
@@ -41,4 +44,16 @@ function applyRotationToCube() {
         rotateY(${STATUS.cubeRotationY}deg)
         rotateZ(${STATUS.cubeRotationZ}deg)`
     );
+}
+
+function handleCubieClick() {
+    $(".cubie").click(function () {
+        const type = $(this).attr("data-type");
+        const coords = $(this)
+            .attr("data-coords")
+            .split(",")
+            .map((x) => parseInt(x));
+        console.log(type, coords);
+        // TODO
+    });
 }
