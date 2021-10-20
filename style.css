@@ -75,7 +75,6 @@ body {
 
 #cube {
     transform-style: inherit;
-    transform: rotateX(-45deg) rotateY(45deg);
     transition: transform 150ms ease-in-out;
 }
 

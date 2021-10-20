@@ -1,16 +1,56 @@
+import {
+    rotationMatrix_X,
+    rotationMatrix_Y,
+    rotationMatrix_Z,
+    convertToCSSMatrix,
+    initialMatrix,
+} from "./matrix.js";
+
 const STATUS = {
-    cubeRotationX: -45,
-    cubeRotationY: 45,
-    cubeRotationZ: 0,
+    rotationMatrix: initialMatrix,
 };
 
 const KEY_MAP = {
-    ArrowRight: () => (STATUS.cubeRotationY += 45),
-    ArrowLeft: () => (STATUS.cubeRotationY -= 45),
-    ArrowUp: () => (STATUS.cubeRotationX += 45),
-    ArrowDown: () => (STATUS.cubeRotationX -= 45),
-    4: () => (STATUS.cubeRotationZ -= 45),
-    6: () => (STATUS.cubeRotationZ += 45),
+    ArrowRight: () => {
+        STATUS.rotationMatrix = math.multiply(
+            STATUS.rotationMatrix,
+            rotationMatrix_Y(-45)
+        );
+    },
+    ArrowLeft: () => {
+        STATUS.rotationMatrix = math.multiply(
+            STATUS.rotationMatrix,
+            rotationMatrix_Y(+45)
+        );
+    },
+    ArrowUp: () => {
+        STATUS.rotationMatrix = math.multiply(
+            STATUS.rotationMatrix,
+            rotationMatrix_X(-45)
+        );
+    },
+    ArrowDown: () => {
+        STATUS.rotationMatrix = math.multiply(
+            STATUS.rotationMatrix,
+            rotationMatrix_X(+45)
+        );
+    },
+    4: () => {
+        STATUS.rotationMatrix = math.multiply(
+            STATUS.rotationMatrix,
+            rotationMatrix_Z(+45)
+        );
+    },
+    6: () => {
+        STATUS.rotationMatrix = math.multiply(
+            STATUS.rotationMatrix,
+            rotationMatrix_Z(-45)
+        );
+    },
+    i: () => {
+        const isChecked = $("#helpToggler").prop("checked");
+        $("#helpToggler").prop("checked", !isChecked);
+    },
 };
 
 const ALLOWED_KEYS = Object.keys(KEY_MAP);
@@ -30,10 +70,6 @@ function handleKeyDown() {
 }
 
 function applyRotationToCube() {
-    $("#cube").css(
-        "transform",
-        `rotateX(${STATUS.cubeRotationX}deg)
-        rotateY(${STATUS.cubeRotationY}deg)
-        rotateZ(${STATUS.cubeRotationZ}deg)`
-    );
+    const rotationString = convertToCSSMatrix(STATUS.rotationMatrix);
+    $("#cube").css("transform", `matrix3d(${rotationString})`);
 }
