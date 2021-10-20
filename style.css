@@ -11,7 +11,6 @@
 }
 
 body {
-    overflow: hidden;
     background-color: black;
     color: white;
 }
@@ -21,13 +20,11 @@ body {
 #help {
     padding: 10px;
     font-family: "Courier New", Courier, monospace;
-    font-size: 20px;
+    font-size: 22px;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 20px black;
 }
 
 #helpToggler {
@@ -35,7 +32,11 @@ body {
 }
 
 #helpContent {
-    display: none;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0px 0px 20px black;
+    opacity: 0;
+    transform-origin: top;
+    transition: all 500ms ease-out;
 }
 
 #helpToggler:checked ~ label i {
@@ -43,7 +44,7 @@ body {
 }
 
 #helpToggler:checked ~ #helpContent {
-    display: block;
+    opacity: 1;
 }
 
 #help i {
@@ -106,6 +107,12 @@ body {
 
 .cubie:hover .face {
     box-shadow: 0px 0px calc(0.3 * var(--cubie-size)) white;
+}
+
+/* selected cubie */
+
+.cubie.selected .face {
+    background: black;
 }
 
 /* 6 faces */
