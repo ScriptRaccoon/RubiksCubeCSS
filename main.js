@@ -11,6 +11,10 @@ const KEY_MAP = {
     ArrowDown: () => (STATUS.cubeRotationX -= 45),
     4: () => (STATUS.cubeRotationZ -= 45),
     6: () => (STATUS.cubeRotationZ += 45),
+    i: () => {
+        const isChecked = $("#helpToggler").prop("checked");
+        $("#helpToggler").prop("checked", !isChecked);
+    },
 };
 
 const ALLOWED_KEYS = Object.keys(KEY_MAP);
@@ -19,6 +23,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
     handleKeyDown();
+    console.log($("#cube").css("transform"));
 }
 
 function handleKeyDown() {
