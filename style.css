@@ -1,7 +1,7 @@
 /* general stuff */
 
 :root {
-    --cubie-size: 100px;
+    --cubie-size: min(100px, 18vw);
 }
 
 * {
@@ -11,8 +11,52 @@
 }
 
 body {
+    overflow: hidden;
     background-color: black;
     color: white;
+}
+
+/* help */
+
+#help {
+    padding: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 20px black;
+}
+
+#helpToggler {
+    display: none;
+}
+
+#helpContent {
+    display: none;
+}
+
+#helpToggler:checked ~ label i {
+    opacity: 1 !important;
+}
+
+#helpToggler:checked ~ #helpContent {
+    display: block;
+}
+
+#help i {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#help i:hover {
+    opacity: 1;
+}
+
+#helpContent p {
+    margin-top: 10px;
 }
 
 /* stage */
@@ -31,16 +75,8 @@ body {
 
 #cube {
     transform-style: inherit;
-    animation: cube-rotation 35s linear infinite;
-}
-
-@keyframes cube-rotation {
-    from {
-        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
-    to {
-        transform: rotateY(1080deg) rotateX(360deg) rotateZ(-360deg);
-    }
+    transform: rotateX(-45deg) rotateY(45deg);
+    transition: transform 150ms ease-in-out;
 }
 
 /* cubie */

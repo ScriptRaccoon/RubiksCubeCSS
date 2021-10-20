@@ -5,9 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rubiks Cube</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <section id="help">
+        
+        <input type="checkbox" id="helpToggler" checked=false>
+        <label for="helpToggler"><i class="fas fa-info-circle"></i></label>
+        <div id="helpContent">
+            <p>
+                Use the <strong>Arrow keys</strong> to rotate the cube along the X- and Y-axes.
+            </p>
+            <p>
+                Use <strong>4</strong> and <strong>6</strong> to rotate the cube along the Z-axis.
+            </p>
+            <p>
+                Use <strong>S</strong> to scramble the cube.
+            </p>
+            <p>
+                Use <strong>U</strong> to undo the last rotation.
+            </p>
+            <p>
+                Use <strong>T</strong> (resp. <strong>Shift+T</strong>) to rotate the top layer clockwise (resp. anti-clockwise).
+            </p>
+            <p>
+                Use <strong>B</strong> (resp. <strong>Shift+B</strong>) to rotate the bottom layer clockwise (resp. anti-clockwise).
+            </p>
+            <p>
+                Use <strong>L</strong> (resp. <strong>Shift+L</strong>) to rotate the left layer clockwise (resp. anti-clockwise).
+            </p>
+            <p>
+                Use <strong>R</strong> (resp. <strong>Shift+R</strong>) to rotate the right layer clockwise (resp. anti-clockwise).
+            </p>
+            <p>
+                Use <strong>F</strong> (resp. <strong>Shift+F</strong>) to rotate the front layer clockwise (resp. anti-clockwise).
+            </p>
+            <p>
+                Use <strong>B</strong> (resp. <strong>Shift+B</strong>) to rotate the back layer clockwise (resp. anti-clockwise).
+            </p>
+          
+            
+        </div>
+    </section>
     <main id="stage">
         <div id="cube">
             <!-- first layer -->
@@ -223,6 +263,7 @@
             </div>
         </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>
 </body>
 </html>
