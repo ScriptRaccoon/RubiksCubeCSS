@@ -113,13 +113,11 @@ export function rotateLayer(face, orientation) {
         const cubieContainer = $(`#${cubie.id}`).children(
             ".cubieContainer"
         );
-        // 100 is hardcoded, needs to be replaced by cubie-size,
-        // but that currently does not work
         cubieContainer.css(
             "transform-origin",
-            `${-cubie.coords.x * 100}px
-            ${-cubie.coords.y * 100}px
-                ${-cubie.coords.z * 100}px`
+            `calc(${-cubie.coords.x} * var(--cubie-size))
+            calc(${-cubie.coords.y} * var(--cubie-size))
+            calc(${-cubie.coords.z} * var(--cubie-size))`
         );
         cubie.rotation[u] += angle;
         cubieContainer.css({
@@ -128,9 +126,11 @@ export function rotateLayer(face, orientation) {
             rotateZ(${cubie.rotation.z}deg)`,
         });
         setTimeout(() => {
-            cubie.coords = coordinateTransform[face][orientation](
-                cubie.coords
-            );
+            // does not work currently
+
+            // cubie.coords = coordinateTransform[face][orientation](
+            //     cubie.coords
+            // );
             canRotate = true;
         }, rotationSpeed);
     }
