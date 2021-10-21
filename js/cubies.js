@@ -288,6 +288,8 @@ const layerDetectMap = {
     standing: { z: 0 },
 };
 
+export const LAYER_LIST = Object.keys(layerDetectMap);
+
 export const layerCoordinate = (layer) =>
     Object.keys(layerDetectMap[layer])[0];
 

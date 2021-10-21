@@ -100,7 +100,12 @@ main {
 .cubieContainer {
     transform-style: inherit;
     position: absolute;
-    transition: transform 250ms ease-in-out;
+    transition: transform ease-in-out;
+    transition-duration: 250ms;
+}
+
+#cube.scrambling .cubieContainer {
+    transition-duration: 80ms;
 }
 
 .cubie .face {

@@ -1,9 +1,9 @@
-import { saveRotation, undoRotation } from "./history.js";
+import { saveRotation } from "./history.js";
 import { layerCoordinate, getCubiesFromLayer } from "./cubies.js";
 
 let canRotate = true;
 
-const rotationSpeed = 250;
+export const rotationSpeed = 250;
 
 const coordinateTransform = {
     front: {
@@ -105,10 +105,14 @@ const coordinateTransform = {
     //  TODO: middle, standing, equator
 };
 
-export function rotateLayer(layer, orientation, save = true) {
-    if (!canRotate) return;
+export function rotateLayer(layer, orientation, options) {
+    if (!canRotate) {
+        console.log("not allowed to rotate");
+        return;
+    }
     canRotate = false;
-    if (save) saveRotation([layer, orientation]);
+    if (!options || options.save) saveRotation([layer, orientation]);
+    const speed = options?.speed || rotationSpeed;
     const angle = orientation == "+1" ? 90 : -90;
     const cubies = getCubiesFromLayer(layer);
     const u = layerCoordinate(layer);
@@ -134,6 +138,6 @@ export function rotateLayer(layer, orientation, save = true) {
             //     cubie.coords
             // );
             canRotate = true;
-        }, rotationSpeed);
+        }, speed);
     }
 }

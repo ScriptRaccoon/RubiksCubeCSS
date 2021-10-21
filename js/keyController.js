@@ -3,6 +3,7 @@ import { rotateLayer } from "./rotateLayer.js";
 import { applyRotationToCube } from "./rotateCube.js";
 import { helpToggler } from "./helpToggler.js";
 import { undoRotation } from "./history.js";
+import { scramble } from "./scramble.js";
 
 const KEY_MAP = {
     ArrowRight: () => applyRotationToCube({ y: 45 }),
@@ -33,6 +34,7 @@ const KEY_MAP = {
     s: () => rotateLayer("standing", "+1"),
     S: () => rotateLayer("standing", "-1"),
     u: undoRotation,
+    X: scramble,
 };
 
 const ALLOWED_KEYS = Object.keys(KEY_MAP);
