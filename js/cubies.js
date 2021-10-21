@@ -276,21 +276,24 @@ export function generateCubies() {
     }
 }
 
-const faceDetectMap = {
+const layerDetectMap = {
     front: { z: +1 },
     back: { z: -1 },
     top: { y: -1 },
     down: { y: +1 },
     left: { x: -1 },
     right: { x: +1 },
+    equator: { y: 0 },
+    middle: { x: 0 },
+    standing: { z: 0 },
 };
 
-export const faceCoordinate = (face) =>
-    Object.keys(faceDetectMap[face])[0];
+export const layerCoordinate = (layer) =>
+    Object.keys(layerDetectMap[layer])[0];
 
-export function getCubiesFromFace(face) {
-    const u = faceCoordinate(face);
+export function getCubiesFromLayer(layer) {
+    const u = layerCoordinate(layer);
     return CUBIE_LIST.filter(
-        (cubie) => cubie.coords[u] == faceDetectMap[face][u]
+        (cubie) => cubie.coords[u] == layerDetectMap[layer][u]
     );
 }

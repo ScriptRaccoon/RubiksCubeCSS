@@ -1,4 +1,4 @@
-import { faceCoordinate, getCubiesFromFace } from "./cubies.js";
+import { layerCoordinate, getCubiesFromLayer } from "./cubies.js";
 
 let canRotate = true;
 
@@ -101,14 +101,15 @@ const coordinateTransform = {
             };
         },
     },
+    //  TODO: middle, standing, equator
 };
 
-export function rotateLayer(face, orientation) {
+export function rotateLayer(layer, orientation) {
     if (!canRotate) return;
     canRotate = false;
     const angle = orientation == "+1" ? 90 : -90;
-    const cubies = getCubiesFromFace(face);
-    const u = faceCoordinate(face);
+    const cubies = getCubiesFromLayer(layer);
+    const u = layerCoordinate(layer);
     for (const cubie of cubies) {
         const cubieContainer = $(`#${cubie.id}`).children(
             ".cubieContainer"
@@ -126,8 +127,7 @@ export function rotateLayer(face, orientation) {
             rotateZ(${cubie.rotation.z}deg)`,
         });
         setTimeout(() => {
-            // does not work currently
-
+            // does not work yet
             // cubie.coords = coordinateTransform[face][orientation](
             //     cubie.coords
             // );

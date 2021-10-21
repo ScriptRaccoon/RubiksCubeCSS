@@ -25,6 +25,12 @@ const KEY_MAP = {
     T: () => rotateLayer("top", "+1"),
     d: () => rotateLayer("down", "+1"),
     D: () => rotateLayer("down", "-1"),
+    e: () => rotateLayer("equator", "+1"),
+    E: () => rotateLayer("equator", "-1"),
+    m: () => rotateLayer("middle", "-1"),
+    M: () => rotateLayer("middle", "+1"),
+    s: () => rotateLayer("standing", "+1"),
+    S: () => rotateLayer("standing", "-1"),
 };
 
 const ALLOWED_KEYS = Object.keys(KEY_MAP);
