@@ -1,3 +1,4 @@
+import { saveRotation, undoRotation } from "./history.js";
 import { layerCoordinate, getCubiesFromLayer } from "./cubies.js";
 
 let canRotate = true;
@@ -104,9 +105,10 @@ const coordinateTransform = {
     //  TODO: middle, standing, equator
 };
 
-export function rotateLayer(layer, orientation) {
+export function rotateLayer(layer, orientation, save = true) {
     if (!canRotate) return;
     canRotate = false;
+    if (save) saveRotation([layer, orientation]);
     const angle = orientation == "+1" ? 90 : -90;
     const cubies = getCubiesFromLayer(layer);
     const u = layerCoordinate(layer);
