@@ -1,6 +1,7 @@
 import { zoomIn, zoomOut } from "./zoom.js";
-import { rotateLeftLayer } from "./rotateLayer.js";
+import { rotateLayer } from "./rotateLayer.js";
 import { applyRotationToCube } from "./rotateCube.js";
+import { helpToggler } from "./helpToggler.js";
 
 const KEY_MAP = {
     ArrowRight: () => applyRotationToCube({ y: 45 }),
@@ -9,14 +10,21 @@ const KEY_MAP = {
     ArrowDown: () => applyRotationToCube({ x: -45 }),
     4: () => applyRotationToCube({ z: -45 }),
     6: () => applyRotationToCube({ z: 45 }),
-    i: () => {
-        const isChecked = $("#helpToggler").prop("checked");
-        $("#helpToggler").prop("checked", !isChecked);
-    },
+    i: helpToggler,
     "+": zoomIn,
     "-": zoomOut,
-    l: () => rotateLeftLayer(+1),
-    L: () => rotateLeftLayer(-1),
+    f: () => rotateLayer("front", +1),
+    F: () => rotateLayer("front", -1),
+    b: () => rotateLayer("back", -1),
+    B: () => rotateLayer("back", +1),
+    l: () => rotateLayer("left", -1),
+    L: () => rotateLayer("left", +1),
+    r: () => rotateLayer("right", +1),
+    R: () => rotateLayer("right", -1),
+    t: () => rotateLayer("top", +1),
+    T: () => rotateLayer("top", -1),
+    d: () => rotateLayer("down", +1),
+    D: () => rotateLayer("down", -1),
 };
 
 const ALLOWED_KEYS = Object.keys(KEY_MAP);

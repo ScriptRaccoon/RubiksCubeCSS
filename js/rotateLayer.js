@@ -1,26 +1,37 @@
-import { CUBIE_LIST } from "./cubies.js";
+import { faceCoordinate, getCubiesFromFace } from "./cubies.js";
 
 let canRotate = true;
 
-const rotationSpeed = 2000; // 200
+const rotationSpeed = 250;
 
-export function rotateLeftLayer(orientation) {
+export function rotateLayer(face, orientation) {
     if (!canRotate) return;
     canRotate = false;
-    const relevantCubies = CUBIE_LIST.filter(
-        (cubie) => cubie.coords[0] == -1
-    );
-    const angle = orientation == +1 ? "-90deg" : "90deg";
-    for (const cubie of relevantCubies) {
-        const cubieElement = $(`#${cubie.id}`);
-        const currentTransform = cubieElement.css("transform");
-        cubieElement.css({
-            transform: `rotateX(${angle}) ` + currentTransform,
+    const angle = orientation == +1 ? 90 : -90;
+    const cubies = getCubiesFromFace(face);
+    const u = faceCoordinate(face);
+    for (const cubie of cubies) {
+        const cubieContainer = $(`#${cubie.id}`).children(
+            ".cubieContainer"
+        );
+        // 100 is hardcoded, needs to be replaced by cubie-size,
+        // but that currently does not work
+        cubieContainer.css(
+            "transform-origin",
+            `${-cubie.coords.x * 100}px
+            ${-cubie.coords.y * 100}px
+                ${-cubie.coords.z * 100}px`
+        );
+        cubie.rotation[u] += angle;
+        cubieContainer.css({
+            transform: `rotateX(${cubie.rotation.x}deg)
+            rotateY(${cubie.rotation.y}deg)
+            rotateZ(${cubie.rotation.z}deg)`,
         });
         setTimeout(() => {
-            const coordTransform = ([x, y, z]) => [x, z, -y];
-            cubie.coords = coordTransform(cubie.coords);
+            // const coordTransform = ([x, y, z]) => [-y, x, z];
+            // cubie.coords = coordTransform(cubie.coords);
             canRotate = true;
-        }, rotationSpeed + 10);
+        }, rotationSpeed);
     }
 }

@@ -89,9 +89,20 @@ main {
 /* cubie */
 
 .cubie {
+    width: 0%;
+    height: 0%;
     transform-style: inherit;
-    /* 200ms */
-    transition: transform 2000ms ease-in-out;
+}
+
+/* only for debugging */
+.cubie.selected .face {
+    background: brown;
+}
+
+.cubieContainer {
+    transform-style: inherit;
+    position: absolute;
+    transition: transform 250ms ease-in-out;
 }
 
 .cubie .face {

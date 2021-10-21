@@ -11,7 +11,7 @@ export const CUBIE_LIST = [
     {
         id: "w",
         type: "center",
-        coords: [0, -1, 0],
+        coords: { x: 0, y: -1, z: 0 },
         colors: {
             top: "white",
         },
@@ -19,7 +19,7 @@ export const CUBIE_LIST = [
     {
         id: "y",
         type: "center",
-        coords: [0, 1, 0],
+        coords: { x: 0, y: 1, z: 0 },
         colors: {
             bottom: "yellow",
         },
@@ -27,7 +27,7 @@ export const CUBIE_LIST = [
     {
         id: "r",
         type: "center",
-        coords: [-1, 0, 0],
+        coords: { x: -1, y: 0, z: 0 },
         colors: {
             left: "red",
         },
@@ -35,7 +35,7 @@ export const CUBIE_LIST = [
     {
         id: "o",
         type: "center",
-        coords: [1, 0, 0],
+        coords: { x: 1, y: 0, z: 0 },
         colors: {
             right: "orange",
         },
@@ -43,7 +43,7 @@ export const CUBIE_LIST = [
     {
         id: "b",
         type: "center",
-        coords: [0, 0, 1],
+        coords: { x: 0, y: 0, z: 1 },
         colors: {
             front: "blue",
         },
@@ -51,7 +51,7 @@ export const CUBIE_LIST = [
     {
         id: "g",
         type: "center",
-        coords: [0, 0, -1],
+        coords: { x: 0, y: 0, z: -1 },
         colors: {
             back: "green",
         },
@@ -60,7 +60,7 @@ export const CUBIE_LIST = [
     {
         id: "wbr",
         type: "corner",
-        coords: [-1, -1, 1],
+        coords: { x: -1, y: -1, z: 1 },
         colors: {
             top: "white",
             front: "blue",
@@ -70,7 +70,7 @@ export const CUBIE_LIST = [
     {
         id: "wbo",
         type: "corner",
-        coords: [1, -1, 1],
+        coords: { x: 1, y: -1, z: 1 },
         colors: {
             top: "white",
             front: "blue",
@@ -80,7 +80,7 @@ export const CUBIE_LIST = [
     {
         id: "wgo",
         type: "corner",
-        coords: [1, -1, -1],
+        coords: { x: 1, y: -1, z: -1 },
         colors: {
             top: "white",
             back: "green",
@@ -90,7 +90,7 @@ export const CUBIE_LIST = [
     {
         id: "wgr",
         type: "corner",
-        coords: [-1, -1, -1],
+        coords: { x: -1, y: -1, z: -1 },
         colors: {
             top: "white",
             left: "red",
@@ -100,7 +100,7 @@ export const CUBIE_LIST = [
     {
         id: "wb",
         type: "edge",
-        coords: [0, -1, 1],
+        coords: { x: 0, y: -1, z: 1 },
         colors: {
             top: "white",
             front: "blue",
@@ -109,7 +109,7 @@ export const CUBIE_LIST = [
     {
         id: "wo",
         type: "edge",
-        coords: [1, -1, 0],
+        coords: { x: 1, y: -1, z: 0 },
         colors: {
             top: "white",
             right: "orange",
@@ -118,7 +118,7 @@ export const CUBIE_LIST = [
     {
         id: "wr",
         type: "edge",
-        coords: [-1, -1, 0],
+        coords: { x: -1, y: -1, z: 0 },
         colors: {
             top: "white",
             left: "red",
@@ -127,7 +127,7 @@ export const CUBIE_LIST = [
     {
         id: "wg",
         type: "edge",
-        coords: [0, -1, -1],
+        coords: { x: 0, y: -1, z: -1 },
         colors: {
             top: "white",
             back: "green",
@@ -136,7 +136,7 @@ export const CUBIE_LIST = [
     {
         id: "og",
         type: "edge",
-        coords: [1, 0, -1],
+        coords: { x: 1, y: 0, z: -1 },
         colors: {
             right: "orange",
             back: "green",
@@ -145,7 +145,7 @@ export const CUBIE_LIST = [
     {
         id: "rg",
         type: "edge",
-        coords: [-1, 0, -1],
+        coords: { x: -1, y: 0, z: -1 },
         colors: {
             left: "red",
             back: "green",
@@ -154,7 +154,7 @@ export const CUBIE_LIST = [
     {
         id: "rb",
         type: "edge",
-        coords: [-1, 0, 1],
+        coords: { x: -1, y: 0, z: 1 },
         colors: {
             front: "blue",
             left: "red",
@@ -163,7 +163,7 @@ export const CUBIE_LIST = [
     {
         id: "bo",
         type: "edge",
-        coords: [1, 0, 1],
+        coords: { x: 1, y: 0, z: 1 },
         colors: {
             front: "blue",
             right: "orange",
@@ -172,7 +172,7 @@ export const CUBIE_LIST = [
     {
         id: "by",
         type: "edge",
-        coords: [0, 1, 1],
+        coords: { x: 0, y: 1, z: 1 },
         colors: {
             front: "blue",
             bottom: "yellow",
@@ -181,7 +181,7 @@ export const CUBIE_LIST = [
     {
         id: "gy",
         type: "edge",
-        coords: [0, 1, -1],
+        coords: { x: 0, y: 1, z: -1 },
         colors: {
             back: "green",
             bottom: "yellow",
@@ -190,7 +190,7 @@ export const CUBIE_LIST = [
     {
         id: "ry",
         type: "edge",
-        coords: [-1, 1, 0],
+        coords: { x: -1, y: 1, z: 0 },
         colors: {
             left: "red",
             bottom: "yellow",
@@ -199,7 +199,7 @@ export const CUBIE_LIST = [
     {
         id: "oy",
         type: "edge",
-        coords: [1, 1, 0],
+        coords: { x: 1, y: 1, z: 0 },
         colors: {
             right: "orange",
             bottom: "yellow",
@@ -208,7 +208,7 @@ export const CUBIE_LIST = [
     {
         id: "ybr",
         type: "corner",
-        coords: [-1, 1, 1],
+        coords: { x: -1, y: 1, z: 1 },
         colors: {
             front: "blue",
             bottom: "yellow",
@@ -218,7 +218,7 @@ export const CUBIE_LIST = [
     {
         id: "ybo",
         type: "corner",
-        coords: [1, 1, 1],
+        coords: { x: 1, y: 1, z: 1 },
         colors: {
             front: "blue",
             bottom: "yellow",
@@ -228,7 +228,7 @@ export const CUBIE_LIST = [
     {
         id: "ygr",
         type: "corner",
-        coords: [-1, 1, -1],
+        coords: { x: -1, y: 1, z: -1 },
         colors: {
             back: "green",
             bottom: "yellow",
@@ -238,7 +238,7 @@ export const CUBIE_LIST = [
     {
         id: "ygo",
         type: "corner",
-        coords: [1, 1, -1],
+        coords: { x: 1, y: 1, z: -1 },
         colors: {
             back: "green",
             bottom: "yellow",
@@ -249,23 +249,48 @@ export const CUBIE_LIST = [
 
 export function generateCubies() {
     for (const cubie of CUBIE_LIST) {
-        cubie.originalCoords = [...cubie.coords];
+        cubie.originalCoords = { ...cubie.coords };
+        cubie.rotation = { x: 0, y: 0, z: 0 };
+        // cubieElement holds translation transform
         const cubieElement = $("<div></div>")
             .addClass("cubie")
             .attr("id", cubie.id)
             .css(
                 "transform",
-                `translateX(calc(${cubie.coords[0]} * var(--cubie-size)))
-                 translateY(calc(${cubie.coords[1]} * var(--cubie-size)))
-                 translateZ(calc(${cubie.coords[2]} * var(--cubie-size)))`
+                `translateX(calc(${cubie.coords.x} * var(--cubie-size)))
+                 translateY(calc(${cubie.coords.y} * var(--cubie-size)))
+                 translateZ(calc(${cubie.coords.z} * var(--cubie-size)))`
             );
+        // cubieContainer holds faces and rotation transform
+        const cubieContainer = $("<div></div>")
+            .appendTo(cubieElement)
+            .addClass("cubieContainer");
         for (const faceName of FACE_NAMES) {
             const face = $("<div></div>")
                 .addClass(`face ${faceName}`)
-                .appendTo(cubieElement);
+                .appendTo(cubieContainer);
             if (cubie.colors[faceName])
                 face.css("--color", cubie.colors[faceName]);
         }
         cubieElement.appendTo("#cube");
     }
+}
+
+const faceDetectMap = {
+    front: { z: +1 },
+    back: { z: -1 },
+    top: { y: -1 },
+    down: { y: +1 },
+    left: { x: -1 },
+    right: { x: +1 },
+};
+
+export const faceCoordinate = (face) =>
+    Object.keys(faceDetectMap[face])[0];
+
+export function getCubiesFromFace(face) {
+    const u = faceCoordinate(face);
+    return CUBIE_LIST.filter(
+        (cubie) => cubie.coords[u] == faceDetectMap[face][u]
+    );
 }
