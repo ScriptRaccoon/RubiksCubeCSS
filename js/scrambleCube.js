@@ -1,6 +1,6 @@
-import { LAYER_LIST } from "./cubies.js";
+import { LAYER_LIST } from "./layers.js";
 import { deleteHistory } from "./history.js";
-import { rotateLayer, rotationSpeed } from "./rotateLayer.js";
+import { rotateLayer } from "./rotateLayer.js";
 
 const numberOfRotations = 50;
 const scrambleSpeed = 80;
@@ -13,7 +13,7 @@ function randEl(list) {
     return list[randInt(0, list.length)];
 }
 
-export function scramble() {
+export function scrambleCube() {
     deleteHistory();
     $("#cube").addClass("scrambling");
     scrambleStep(0);

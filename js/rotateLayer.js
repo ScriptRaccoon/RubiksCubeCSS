@@ -1,113 +1,13 @@
 import { saveRotation } from "./history.js";
-import { layerCoordinate, getCubiesFromLayer } from "./cubies.js";
+import { layerCoordinate, getCubiesFromLayer } from "./layers.js";
+import { coordinateTransform } from "./coordinateTransform.js";
 
 let canRotate = true;
 
 export const rotationSpeed = 250;
 
-const coordinateTransform = {
-    front: {
-        "+1": function (coord) {
-            return {
-                x: -coord.y,
-                y: coord.x,
-                z: coord.z,
-            };
-        },
-        "-1": function (coord) {
-            return {
-                x: coord.y,
-                y: -coord.x,
-                z: coord.z,
-            };
-        },
-    },
-    back: {
-        "+1": function (coord) {
-            return {
-                x: -coord.y,
-                y: coord.x,
-                z: coord.z,
-            };
-        },
-        "-1": function (coord) {
-            return {
-                x: coord.y,
-                y: -coord.x,
-                z: coord.z,
-            };
-        },
-    },
-    top: {
-        "-1": function (coord) {
-            return {
-                x: -coord.z,
-                y: coord.y,
-                z: coord.x,
-            };
-        },
-        "+1": function (coord) {
-            return {
-                x: coord.z,
-                y: coord.y,
-                z: -coord.x,
-            };
-        },
-    },
-    down: {
-        "-1": function (coord) {
-            return {
-                x: -coord.z,
-                y: coord.y,
-                z: coord.x,
-            };
-        },
-        "+1": function (coord) {
-            return {
-                x: coord.z,
-                y: coord.y,
-                z: -coord.x,
-            };
-        },
-    },
-    left: {
-        "+1": function (coord) {
-            return {
-                x: coord.x,
-                y: -coord.z,
-                z: coord.y,
-            };
-        },
-        "-1": function (coord) {
-            return {
-                x: coord.x,
-                y: coord.z,
-                z: -coord.y,
-            };
-        },
-    },
-    right: {
-        "+1": function (coord) {
-            return {
-                x: coord.x,
-                y: -coord.z,
-                z: coord.y,
-            };
-        },
-        "-1": function (coord) {
-            return {
-                x: coord.x,
-                y: coord.z,
-                z: -coord.y,
-            };
-        },
-    },
-    //  TODO: middle, standing, equator
-};
-
 export function rotateLayer(layer, orientation, options) {
     if (!canRotate) {
-        console.log("not allowed to rotate");
         return;
     }
     canRotate = false;
@@ -117,6 +17,7 @@ export function rotateLayer(layer, orientation, options) {
     const cubies = getCubiesFromLayer(layer);
     const u = layerCoordinate(layer);
     for (const cubie of cubies) {
+        // The CSS is not working yet!
         const cubieContainer = $(`#${cubie.id}`).children(
             ".cubieContainer"
         );
@@ -133,10 +34,9 @@ export function rotateLayer(layer, orientation, options) {
             rotateZ(${cubie.rotation.z}deg)`,
         });
         setTimeout(() => {
-            // does not work yet
-            // cubie.coords = coordinateTransform[face][orientation](
-            //     cubie.coords
-            // );
+            cubie.coords = coordinateTransform[layer][orientation](
+                cubie.coords
+            );
             canRotate = true;
         }, speed);
     }

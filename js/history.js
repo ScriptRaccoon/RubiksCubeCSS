@@ -11,9 +11,7 @@ export function saveRotation(data) {
 }
 
 export function undoRotation() {
-    console.log("undo rota");
     if (history.length == 0) {
-        console.log("no history");
         return;
     }
     const lastMove = history.pop();

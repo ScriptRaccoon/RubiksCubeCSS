@@ -1,20 +1,17 @@
 import { zoomIn, zoomOut } from "./zoom.js";
 import { rotateLayer } from "./rotateLayer.js";
-import { applyRotationToCube } from "./rotateCube.js";
-import { helpToggler } from "./helpToggler.js";
+import { rotateCube } from "./rotateCube.js";
+import { helpToggler, transparentToggler } from "./togglers.js";
 import { undoRotation } from "./history.js";
-import { scramble } from "./scramble.js";
+import { scrambleCube } from "./scrambleCube.js";
 
 const KEY_MAP = {
-    ArrowRight: () => applyRotationToCube({ y: 45 }),
-    ArrowLeft: () => applyRotationToCube({ y: -45 }),
-    ArrowUp: () => applyRotationToCube({ x: 45 }),
-    ArrowDown: () => applyRotationToCube({ x: -45 }),
-    4: () => applyRotationToCube({ z: -45 }),
-    6: () => applyRotationToCube({ z: 45 }),
-    i: helpToggler,
-    "+": zoomIn,
-    "-": zoomOut,
+    ArrowRight: () => rotateCube({ y: 45 }),
+    ArrowLeft: () => rotateCube({ y: -45 }),
+    ArrowUp: () => rotateCube({ x: 45 }),
+    ArrowDown: () => rotateCube({ x: -45 }),
+    4: () => rotateCube({ z: -45 }),
+    6: () => rotateCube({ z: 45 }),
     f: () => rotateLayer("front", "+1"),
     F: () => rotateLayer("front", "-1"),
     b: () => rotateLayer("back", "-1"),
@@ -34,14 +31,17 @@ const KEY_MAP = {
     s: () => rotateLayer("standing", "+1"),
     S: () => rotateLayer("standing", "-1"),
     u: undoRotation,
-    X: scramble,
+    X: scrambleCube,
+    i: helpToggler,
+    c: transparentToggler,
+    "+": zoomIn,
+    "-": zoomOut,
 };
-
-const ALLOWED_KEYS = Object.keys(KEY_MAP);
 
 export function handleKeyDown() {
     document.addEventListener("keydown", (e) => {
-        if (!ALLOWED_KEYS.includes(e.key)) return;
-        KEY_MAP[e.key]();
+        if (KEY_MAP[e.key]) {
+            KEY_MAP[e.key]();
+        }
     });
 }

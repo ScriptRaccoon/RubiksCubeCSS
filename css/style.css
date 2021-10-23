@@ -1,12 +1,17 @@
 /* general stuff */
 
 :root {
-    --cubie-size: min(100px, 18vw);
+    --cubie-size: min(120px, 18vw);
     --face-background-color: #505050;
     --background-color: black;
     --help-color: rgba(0, 0, 0, 0.9);
     --light-color: #ffffe0;
     --font-color: white;
+    --cube-rotation-speed: 150ms;
+    --zoom-speed: 100ms;
+    --cubie-rotation-speed: 250ms;
+    --scrambling-speed: 80ms;
+    --hover-speed: 80ms;
 }
 
 * {
@@ -64,10 +69,8 @@ body {
     margin-top: 10px;
 }
 
-/* main */
-
-main {
-    transition: transform 100ms linear;
+#helpContent strong {
+    color: skyblue;
 }
 
 /* stage */
@@ -79,6 +82,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform var(--zoom-speed) linear;
 }
 
 /* cube */
@@ -86,7 +90,15 @@ main {
 #cube {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
-    transition: transform 150ms ease-in-out;
+    transition: transform var(--cube-rotation-speed) ease-in-out;
+}
+
+#cube.transparent {
+    --face-background-color: transparent;
+}
+
+#cube.transparent .face {
+    opacity: 0.85;
 }
 
 /* cubie */
@@ -101,11 +113,11 @@ main {
     transform-style: inherit;
     position: absolute;
     transition: transform ease-in-out;
-    transition-duration: 250ms;
+    transition-duration: var(--cubie-rotation-speed);
 }
 
 #cube.scrambling .cubieContainer {
-    transition-duration: 80ms;
+    transition-duration: var(--scrambling-speed);
 }
 
 .cubie .face {
@@ -116,7 +128,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow 80ms ease-in;
+    transition: box-shadow var(--hover-speed) ease-in;
 }
 
 .cubie .face::before {

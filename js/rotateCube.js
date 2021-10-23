@@ -4,7 +4,7 @@ const ROTATION = {
     z: 0,
 };
 
-export function applyRotationToCube(options) {
+export function rotateCube(options) {
     for (const key of Object.keys(ROTATION)) {
         if (options[key]) {
             ROTATION[key] += options[key];
