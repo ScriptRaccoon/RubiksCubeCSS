@@ -16,6 +16,6 @@ export function undoRotation() {
     }
     const lastMove = history.pop();
     const [layer, orientation] = lastMove;
-    const reverseOrientation = orientation == "+1" ? "-1" : "+1";
+    const reverseOrientation = orientation == "+" ? "-" : "+";
     rotateLayer(layer, reverseOrientation, { save: false });
 }

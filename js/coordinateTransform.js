@@ -1,14 +1,14 @@
 export const coordinateTransform = {};
 
 coordinateTransform.front = {
-    "+1": function (coord) {
+    "+": function (coord) {
         return {
             x: -coord.y,
             y: coord.x,
             z: coord.z,
         };
     },
-    "-1": function (coord) {
+    "-": function (coord) {
         return {
             x: coord.y,
             y: -coord.x,
@@ -18,14 +18,14 @@ coordinateTransform.front = {
 };
 
 coordinateTransform.top = {
-    "-1": function (coord) {
+    "-": function (coord) {
         return {
             x: -coord.z,
             y: coord.y,
             z: coord.x,
         };
     },
-    "+1": function (coord) {
+    "+": function (coord) {
         return {
             x: coord.z,
             y: coord.y,
@@ -35,14 +35,14 @@ coordinateTransform.top = {
 };
 
 coordinateTransform.left = {
-    "+1": function (coord) {
+    "+": function (coord) {
         return {
             x: coord.x,
             y: -coord.z,
             z: coord.y,
         };
     },
-    "-1": function (coord) {
+    "-": function (coord) {
         return {
             x: coord.x,
             y: coord.z,

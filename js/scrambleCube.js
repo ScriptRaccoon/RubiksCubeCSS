@@ -3,7 +3,7 @@ import { deleteHistory } from "./history.js";
 import { rotateLayer } from "./rotateLayer.js";
 
 const numberOfRotations = 50;
-const scrambleSpeed = 80;
+const scrambleSpeed = 100;
 
 function randInt(a, b) {
     return a + Math.floor((b - a) * Math.random());
@@ -25,7 +25,7 @@ function scrambleStep(i) {
         return;
     }
     const randomLayer = randEl(LAYER_LIST);
-    const randomOrientiation = randEl(["+1", "-1"]);
+    const randomOrientiation = randEl(["+", "-"]);
     rotateLayer(randomLayer, randomOrientiation, {
         save: false,
         speed: scrambleSpeed,

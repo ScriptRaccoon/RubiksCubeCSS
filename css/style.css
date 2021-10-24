@@ -9,8 +9,6 @@
     --font-color: white;
     --cube-rotation-speed: 150ms;
     --zoom-speed: 100ms;
-    --cubie-rotation-speed: 250ms;
-    --scrambling-speed: 80ms;
     --hover-speed: 80ms;
 }
 
@@ -101,23 +99,25 @@ body {
     opacity: 0.85;
 }
 
+/* rotation layer */
+
+#cubeContainer {
+    transform-style: inherit;
+}
+
+#rotationLayer {
+    transition: transform ease-in-out;
+    transition-duration: 250ms;
+    transform-style: inherit;
+}
+
 /* cubie */
 
 .cubie {
     width: 0%;
     height: 0%;
     transform-style: inherit;
-}
-
-.cubieContainer {
-    transform-style: inherit;
     position: absolute;
-    transition: transform ease-in-out;
-    transition-duration: var(--cubie-rotation-speed);
-}
-
-#cube.scrambling .cubieContainer {
-    transition-duration: var(--scrambling-speed);
 }
 
 .cubie .face {
