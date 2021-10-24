@@ -79,7 +79,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform var(--zoom-speed) linear;
+    transition: transform linear;
+    transition-duration: var(--zoom-speed);
 }
 
 /* cube */
@@ -96,6 +97,13 @@ body {
 
 #cube.transparent .face {
     opacity: 0.85;
+}
+
+/* solved state */
+
+#stage.solved .face {
+    box-shadow: 0px 0px calc(0.15 * var(--cubie-size))
+        var(--light-color);
 }
 
 /* rotation layer */
@@ -127,7 +135,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow var(--hover-speed) ease-in;
+    transition: box-shadow ease-in;
+    transition-duration: var(--hover-speed);
 }
 
 .cubie .face::before {

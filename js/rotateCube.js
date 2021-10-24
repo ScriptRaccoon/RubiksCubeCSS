@@ -13,7 +13,7 @@ export function rotateCube(options) {
     $("#cube").css(
         "transform",
         `rotateX(${ROTATION.x}deg)
-        rotateY(${ROTATION.y}deg)
-        rotateZ(${ROTATION.z}deg)`
+         rotateY(${ROTATION.y}deg)
+         rotateZ(${ROTATION.z}deg)`
     );
 }

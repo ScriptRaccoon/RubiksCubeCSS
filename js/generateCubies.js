@@ -20,9 +20,10 @@ export function generateCubies() {
             .css(
                 "transform",
                 `translateX(calc(${cubie.coords.x} * var(--cubie-size)))
-                translateY(calc(${cubie.coords.y} * var(--cubie-size)))
-                translateZ(calc(${cubie.coords.z} * var(--cubie-size)))`
+                 translateY(calc(${cubie.coords.y} * var(--cubie-size)))
+                 translateZ(calc(${cubie.coords.z} * var(--cubie-size)))`
             );
+        cubie.originalTransform = cubieElement.css("transform");
         for (const faceName of FACE_NAMES) {
             const face = $("<div></div>")
                 .addClass(`face ${faceName}`)
@@ -37,8 +38,8 @@ export function updateCubieElement(cubie) {
     $(`#${cubie.id}`).css(
         "transform",
         `translateX(calc(${cubie.coords.x} * var(--cubie-size)))
-        translateY(calc(${cubie.coords.y} * var(--cubie-size)))
-        translateZ(calc(${cubie.coords.z} * var(--cubie-size)))
-    ${cubie.rotation}`
+         translateY(calc(${cubie.coords.y} * var(--cubie-size)))
+         translateZ(calc(${cubie.coords.z} * var(--cubie-size)))
+         ${cubie.rotation}`
     );
 }

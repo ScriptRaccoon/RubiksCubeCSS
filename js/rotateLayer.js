@@ -2,6 +2,7 @@ import { saveRotation } from "./history.js";
 import { LAYER_MAP, getCubiesFromLayer } from "./layers.js";
 import { coordinateTransform } from "./coordinateTransform.js";
 import { updateCubieElement } from "./generateCubies.js";
+import { checkIfCubeIsSolved } from "./solutionHandler.js";
 
 export let duringRotation = false;
 
@@ -9,7 +10,7 @@ export const rotationSpeed = 300;
 
 export function rotateLayer(rotation) {
     if (duringRotation) {
-        console.log("not allowed to rotate");
+        console.log("not allowed to rotate yet");
     }
     duringRotation = true;
     const {
@@ -41,5 +42,6 @@ export function rotateLayer(rotation) {
             $("#cubeContainer").append($(`#${cubie.id}`));
         }
         duringRotation = false;
+        checkIfCubeIsSolved();
     }, speed);
 }
