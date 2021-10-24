@@ -15,18 +15,16 @@ function randEl(list) {
 
 export function scrambleCube() {
     deleteHistory();
-    $("#cube").addClass("scrambling");
     scrambleStep(0);
 }
 
 function scrambleStep(i) {
     if (i >= numberOfRotations) {
-        $("#cube").removeClass("scrambling");
         return;
     }
-    const randomLayer = randEl(LAYER_LIST);
-    const randomOrientiation = randEl(["+", "-"]);
-    rotateLayer(randomLayer, randomOrientiation, {
+    rotateLayer({
+        layer: randEl(LAYER_LIST),
+        orientation: randEl(["+", "-"]),
         save: false,
         speed: scrambleSpeed,
     });

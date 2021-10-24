@@ -3,17 +3,22 @@ import { LAYER_MAP, getCubiesFromLayer } from "./layers.js";
 import { coordinateTransform } from "./coordinateTransform.js";
 import { updateCubieElement } from "./generateCubies.js";
 
-let canRotate = true;
+export let duringRotation = false;
 
 export const rotationSpeed = 300;
 
-export function rotateLayer(layer, orientation, options) {
-    if (!canRotate) {
-        return;
+export function rotateLayer(rotation) {
+    if (duringRotation) {
+        console.log("not allowed to rotate");
     }
-    canRotate = false;
-    if (!options || options.save) saveRotation([layer, orientation]);
-    const speed = options?.speed || rotationSpeed;
+    duringRotation = true;
+    const {
+        layer,
+        orientation,
+        speed = rotationSpeed,
+        save = true,
+    } = rotation;
+    if (save) saveRotation(rotation);
     const angle = orientation == "+" ? 90 : -90;
     const cubies = getCubiesFromLayer(layer);
     const axis = LAYER_MAP[layer][0];
@@ -35,6 +40,6 @@ export function rotateLayer(layer, orientation, options) {
             updateCubieElement(cubie);
             $("#cubeContainer").append($(`#${cubie.id}`));
         }
-        canRotate = true;
+        duringRotation = false;
     }, speed);
 }

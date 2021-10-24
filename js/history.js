@@ -1,4 +1,4 @@
-import { rotateLayer } from "./rotateLayer.js";
+import { rotateLayer, duringRotation } from "./rotateLayer.js";
 
 let history = [];
 
@@ -6,16 +6,17 @@ export function deleteHistory() {
     history = [];
 }
 
-export function saveRotation(data) {
-    history.push(data);
+export function saveRotation(rotation) {
+    history.push(rotation);
 }
 
 export function undoRotation() {
-    if (history.length == 0) {
+    if (duringRotation || history.length == 0) {
         return;
     }
-    const lastMove = history.pop();
-    const [layer, orientation] = lastMove;
-    const reverseOrientation = orientation == "+" ? "-" : "+";
-    rotateLayer(layer, reverseOrientation, { save: false });
+    const lastRotation = history.pop();
+    const { orientation } = lastRotation;
+    lastRotation.orientation = orientation == "+" ? "-" : "+";
+    lastRotation.save = false;
+    rotateLayer(lastRotation);
 }
