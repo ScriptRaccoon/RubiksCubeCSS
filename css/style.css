@@ -21,7 +21,6 @@
 body {
     background-color: var(--background-color);
     color: var(--font-color);
-    overflow: hidden;
 }
 
 /* help */
@@ -176,4 +175,19 @@ body {
     transform: translateX(-50%)
         translateY(calc(-50% + 0.5 * var(--cubie-size)))
         rotateX(90deg);
+}
+
+/* mobile devices */
+
+.for-mobile {
+    display: none;
+}
+
+@media (pointer: none), (pointer: coarse) {
+    .for-mobile {
+        display: block;
+    }
+    .for-desktop {
+        display: none;
+    }
 }
