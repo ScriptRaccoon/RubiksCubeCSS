@@ -3,13 +3,6 @@
 :root {
     --zoom-factor: 1;
     --cubie-size: calc(var(--zoom-factor) * min(120px, 18vw));
-    --face-background-color: #505050;
-    --background-color: black;
-    --help-color: rgba(0, 0, 0, 0.9);
-    --light-color: #ffffe0;
-    --font-color: white;
-    --cube-rotation-speed: 150ms;
-    --hover-speed: 80ms;
 }
 
 * {
@@ -19,8 +12,8 @@
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--font-color);
+    background-color: black;
+    color: white;
 }
 
 /* help */
@@ -40,8 +33,8 @@ body {
 }
 
 #helpContent {
-    background-color: var(--help-color);
-    box-shadow: 0px 0px 20px var(--background-color);
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 20px black;
     display: none;
 }
 
@@ -87,15 +80,22 @@ body {
 #cube {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
-    transition: transform var(--cube-rotation-speed) ease-in-out;
+    transition: transform 170ms ease-in-out;
 }
 
-#cube.transparent {
-    --face-background-color: transparent;
+/* transparent mode */
+
+#cube.transparent .face {
+    background: transparent;
 }
 
 #cube.transparent .face {
     opacity: 0.85;
+    box-shadow: none;
+}
+
+#cube.transparent .face::before {
+    box-shadow: none;
 }
 
 /* rotation layer */
@@ -125,12 +125,13 @@ body {
     position: absolute;
     width: var(--cubie-size);
     height: var(--cubie-size);
-    background: var(--face-background-color);
+    background: #404040;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow ease-in;
-    transition-duration: var(--hover-speed);
+    transition: box-shadow 100ms linear;
+    box-shadow: 0 0 calc(0.1 * var(--cubie-size))
+        rgba(255, 255, 255, 0.2) inset;
 }
 
 .cubie .face::before {
@@ -139,11 +140,13 @@ body {
     height: 92%;
     border-radius: calc(0.1 * var(--cubie-size));
     background: var(--color);
+    box-shadow: 0 0 calc(0.05 * var(--cubie-size)) rgba(0, 0, 0, 0.3)
+        inset;
 }
 
 .cubie:hover .face {
-    box-shadow: 0px 0px calc(0.3 * var(--cubie-size))
-        var(--light-color);
+    box-shadow: 0 0 calc(0.2 * var(--cubie-size))
+        rgba(255, 255, 255, 1) inset !important;
 }
 
 /* 6 faces */
