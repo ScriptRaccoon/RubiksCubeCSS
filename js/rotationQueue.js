@@ -2,25 +2,19 @@ import { rotateLayer } from "./rotateLayer.js";
 
 const queue = [];
 
-let id = 0;
+let duringRotation = false;
 
 export function addToQueue(rotation) {
-    id++;
-    rotation.id = id;
     queue.push(rotation);
-    console.log("pushed to queue", rotation);
-    if (queue.length == 1) executeQueue();
+    executeQueue();
 }
 
 async function executeQueue() {
-    if (queue.length == 0) {
-        console.log("queue is empty");
-        return;
-    }
+    if (queue.length == 0 || duringRotation) return;
     const firstRotation = queue[0];
-    console.log("execute rotation", firstRotation);
+    duringRotation = true;
     await rotateLayer(firstRotation);
-    console.log(`rotation ${firstRotation.id} complete`);
+    duringRotation = false;
     queue.splice(0, 1);
     setTimeout(executeQueue, 100);
 }

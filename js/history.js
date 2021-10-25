@@ -1,4 +1,4 @@
-import { rotateLayer } from "./rotateLayer.js";
+import { addToQueue } from "./rotationQueue.js";
 
 let history = [];
 
@@ -11,13 +11,12 @@ export function saveRotation(rotation) {
 }
 
 export function undoRotation() {
-    // TODO: adjust to queue technique
     if (history.length == 0) {
         return;
     }
     const lastRotation = history.pop();
-    const { orientation } = lastRotation;
-    lastRotation.orientation = orientation == "+" ? "-" : "+";
+    lastRotation.orientation =
+        lastRotation.orientation == "+" ? "-" : "+";
     lastRotation.save = false;
-    rotateLayer(lastRotation);
+    addToQueue(lastRotation);
 }
