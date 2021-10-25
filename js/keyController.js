@@ -1,10 +1,10 @@
 import { zoomIn, zoomOut } from "./zoom.js";
-import { rotateLayer } from "./rotateLayer.js";
 import { rotateCube } from "./rotateCube.js";
 import { helpToggler, transparentToggler } from "./togglers.js";
 import { undoRotation } from "./history.js";
 import { scrambleCube } from "./scrambleCube.js";
 import { resetCube } from "./resetCube.js";
+import { addToQueue } from "./rotationQueue.js";
 
 const KEY_MAP = {
     ArrowRight: () => rotateCube({ y: 45 }),
@@ -13,24 +13,24 @@ const KEY_MAP = {
     ArrowDown: () => rotateCube({ x: -45 }),
     4: () => rotateCube({ z: -45 }),
     6: () => rotateCube({ z: 45 }),
-    f: () => rotateLayer({ layer: "front", orientation: "+" }),
-    F: () => rotateLayer({ layer: "front", orientation: "-" }),
-    b: () => rotateLayer({ layer: "back", orientation: "-" }),
-    B: () => rotateLayer({ layer: "back", orientation: "+" }),
-    l: () => rotateLayer({ layer: "left", orientation: "-" }),
-    L: () => rotateLayer({ layer: "left", orientation: "+" }),
-    r: () => rotateLayer({ layer: "right", orientation: "+" }),
-    R: () => rotateLayer({ layer: "right", orientation: "-" }),
-    t: () => rotateLayer({ layer: "top", orientation: "-" }),
-    T: () => rotateLayer({ layer: "top", orientation: "+" }),
-    d: () => rotateLayer({ layer: "down", orientation: "+" }),
-    D: () => rotateLayer({ layer: "down", orientation: "-" }),
-    e: () => rotateLayer({ layer: "equator", orientation: "+" }),
-    E: () => rotateLayer({ layer: "equator", orientation: "-" }),
-    m: () => rotateLayer({ layer: "middle", orientation: "-" }),
-    M: () => rotateLayer({ layer: "middle", orientation: "+" }),
-    s: () => rotateLayer({ layer: "standing", orientation: "+" }),
-    S: () => rotateLayer({ layer: "standing", orientation: "-" }),
+    f: () => addToQueue({ layer: "front", orientation: "+" }),
+    F: () => addToQueue({ layer: "front", orientation: "-" }),
+    b: () => addToQueue({ layer: "back", orientation: "-" }),
+    B: () => addToQueue({ layer: "back", orientation: "+" }),
+    l: () => addToQueue({ layer: "left", orientation: "-" }),
+    L: () => addToQueue({ layer: "left", orientation: "+" }),
+    r: () => addToQueue({ layer: "right", orientation: "+" }),
+    R: () => addToQueue({ layer: "right", orientation: "-" }),
+    t: () => addToQueue({ layer: "top", orientation: "-" }),
+    T: () => addToQueue({ layer: "top", orientation: "+" }),
+    d: () => addToQueue({ layer: "down", orientation: "+" }),
+    D: () => addToQueue({ layer: "down", orientation: "-" }),
+    e: () => addToQueue({ layer: "equator", orientation: "+" }),
+    E: () => addToQueue({ layer: "equator", orientation: "-" }),
+    m: () => addToQueue({ layer: "middle", orientation: "-" }),
+    M: () => addToQueue({ layer: "middle", orientation: "+" }),
+    s: () => addToQueue({ layer: "standing", orientation: "+" }),
+    S: () => addToQueue({ layer: "standing", orientation: "-" }),
     u: undoRotation,
     U: resetCube,
     X: scrambleCube,

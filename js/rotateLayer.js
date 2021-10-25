@@ -3,18 +3,10 @@ import { LAYER_MAP, getCubiesFromLayer } from "./layers.js";
 import { coordinateTransform } from "./coordinateTransform.js";
 import { updateCubieElement } from "./generateCubies.js";
 
-export let duringRotation = false;
-
 export const rotationSpeed = 300;
 
 export function rotateLayer(rotation) {
     return new Promise((resolve) => {
-        if (duringRotation) {
-            console.log("Not allowed to rotate yet");
-            resolve();
-            return;
-        }
-        duringRotation = true;
         const {
             layer,
             orientation,
@@ -43,8 +35,7 @@ export function rotateLayer(rotation) {
                 updateCubieElement(cubie);
                 $("#cubeContainer").append(cubie.element);
             }
-            duringRotation = false;
-            resolve();
+            setTimeout(resolve, 0);
         }, speed);
     });
 }
