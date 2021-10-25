@@ -12,8 +12,7 @@ export function checkIfCubeIsSolved() {
             return false;
         if (
             cubie.type != "center" &&
-            $(`#${cubie.id}`).css("transform") !=
-                cubie.originalTransform
+            cubie.element.css("transform") != cubie.originalTransform
         ) {
             return false;
         }

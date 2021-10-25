@@ -9,6 +9,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "y",
@@ -20,6 +21,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "r",
@@ -31,6 +33,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "o",
@@ -42,6 +45,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "b",
@@ -53,6 +57,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "g",
@@ -64,6 +69,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
 
     {
@@ -78,6 +84,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wbo",
@@ -91,6 +98,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wgo",
@@ -104,6 +112,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wgr",
@@ -117,6 +126,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wb",
@@ -129,6 +139,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wo",
@@ -141,6 +152,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wr",
@@ -153,6 +165,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "wg",
@@ -165,6 +178,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "og",
@@ -177,6 +191,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "rg",
@@ -189,6 +204,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "rb",
@@ -201,6 +217,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "bo",
@@ -213,6 +230,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "by",
@@ -225,6 +243,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "gy",
@@ -237,6 +256,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "ry",
@@ -249,6 +269,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "oy",
@@ -261,6 +282,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "ybr",
@@ -274,6 +296,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "ybo",
@@ -287,6 +310,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "ygr",
@@ -300,6 +324,7 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
     {
         id: "ygo",
@@ -313,5 +338,6 @@ export const CUBIE_LIST = [
         originalTransform: "",
         originalCoords: {},
         rotation: "",
+        element: null,
     },
 ];

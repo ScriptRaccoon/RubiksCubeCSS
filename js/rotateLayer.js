@@ -25,7 +25,7 @@ export function rotateLayer(rotation) {
     const axis = LAYER_MAP[layer][0];
     const newRotation = ` rotate${axis.toUpperCase()}(${angle}deg)`;
     for (const cubie of cubies) {
-        $("#rotationLayer").append($(`#${cubie.id}`));
+        $("#rotationLayer").append(cubie.element);
     }
     $("#rotationLayer")
         .css("transition-duration", `${speed}ms`)
@@ -39,7 +39,7 @@ export function rotateLayer(rotation) {
             const trafo = coordinateTransform[layer][orientation];
             cubie.coords = trafo(cubie.coords);
             updateCubieElement(cubie);
-            $("#cubeContainer").append($(`#${cubie.id}`));
+            $("#cubeContainer").append(cubie.element);
         }
         duringRotation = false;
         checkIfCubeIsSolved();

@@ -125,6 +125,7 @@ body {
     height: 0%;
     transform-style: inherit;
     position: absolute;
+    transition-duration: 0s;
 }
 
 .cubie .face {
