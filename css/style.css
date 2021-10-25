@@ -1,14 +1,14 @@
 /* general stuff */
 
 :root {
-    --cubie-size: min(120px, 18vw);
+    --zoom-factor: 1;
+    --cubie-size: calc(var(--zoom-factor) * min(120px, 18vw));
     --face-background-color: #505050;
     --background-color: black;
     --help-color: rgba(0, 0, 0, 0.9);
     --light-color: #ffffe0;
     --font-color: white;
     --cube-rotation-speed: 150ms;
-    --zoom-speed: 100ms;
     --hover-speed: 80ms;
 }
 
@@ -79,8 +79,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform linear;
-    transition-duration: var(--zoom-speed);
     pointer-events: none;
 }
 
@@ -90,7 +88,6 @@ body {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
     transition: transform var(--cube-rotation-speed) ease-in-out;
-    z-index: 1;
 }
 
 #cube.transparent {

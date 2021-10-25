@@ -23,7 +23,6 @@ export function generateCubies() {
                  translateY(calc(${cubie.coords.y} * var(--cubie-size)))
                  translateZ(calc(${cubie.coords.z} * var(--cubie-size)))`
             );
-        cubie.originalTransform = cubie.element.css("transform");
         for (const faceName of FACE_NAMES) {
             const face = $("<div></div>")
                 .addClass(`face ${faceName}`)
