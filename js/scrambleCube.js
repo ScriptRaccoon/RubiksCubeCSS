@@ -18,15 +18,15 @@ export function scrambleCube() {
     scrambleStep(0);
 }
 
-function scrambleStep(i) {
+async function scrambleStep(i) {
     if (i >= numberOfRotations) {
         return;
     }
-    rotateLayer({
+    await rotateLayer({
         layer: randEl(LAYER_LIST),
         orientation: randEl(["+", "-"]),
         save: false,
         speed: scrambleSpeed,
     });
-    setTimeout(() => scrambleStep(i + 1), scrambleSpeed);
+    scrambleStep(i + 1);
 }
