@@ -73,7 +73,7 @@ body {
 /* stage */
 
 #stage {
-    min-height: 100vh;
+    height: 100vh;
     perspective: calc(10 * var(--cubie-size));
     transform-style: preserve-3d;
     display: flex;
@@ -81,6 +81,7 @@ body {
     align-items: center;
     transition: transform linear;
     transition-duration: var(--zoom-speed);
+    pointer-events: none;
 }
 
 /* cube */
@@ -89,6 +90,7 @@ body {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
     transition: transform var(--cube-rotation-speed) ease-in-out;
+    z-index: 1;
 }
 
 #cube.transparent {
@@ -119,6 +121,7 @@ body {
     transform-style: inherit;
     position: absolute;
     transition-duration: 0s;
+    pointer-events: auto;
 }
 
 .cubie .face {
