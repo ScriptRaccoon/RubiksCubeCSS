@@ -6,6 +6,7 @@ function equalCoords(c, d) {
 }
 
 export function checkIfCubeIsSolved() {
+    // THIS IS TOO RESTRICTIVE RIGHT NOW
     for (const cubie of CUBIE_LIST) {
         if (!equalCoords(cubie.coords, cubie.originalCoords))
             return false;

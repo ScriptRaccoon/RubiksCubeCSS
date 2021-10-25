@@ -4,6 +4,7 @@ import { rotateCube } from "./rotateCube.js";
 import { helpToggler, transparentToggler } from "./togglers.js";
 import { undoRotation } from "./history.js";
 import { scrambleCube } from "./scrambleCube.js";
+import { resetCube } from "./resetCube.js";
 
 const KEY_MAP = {
     ArrowRight: () => rotateCube({ y: 45 }),
@@ -31,6 +32,7 @@ const KEY_MAP = {
     s: () => rotateLayer({ layer: "standing", orientation: "+" }),
     S: () => rotateLayer({ layer: "standing", orientation: "-" }),
     u: undoRotation,
+    U: resetCube,
     X: scrambleCube,
     i: helpToggler,
     c: transparentToggler,

@@ -6,6 +6,9 @@ export const CUBIE_LIST = [
         colors: {
             top: "white",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "y",
@@ -14,6 +17,9 @@ export const CUBIE_LIST = [
         colors: {
             bottom: "yellow",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "r",
@@ -22,6 +28,9 @@ export const CUBIE_LIST = [
         colors: {
             left: "red",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "o",
@@ -30,6 +39,9 @@ export const CUBIE_LIST = [
         colors: {
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "b",
@@ -38,6 +50,9 @@ export const CUBIE_LIST = [
         colors: {
             front: "blue",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "g",
@@ -46,6 +61,9 @@ export const CUBIE_LIST = [
         colors: {
             back: "green",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
 
     {
@@ -57,6 +75,9 @@ export const CUBIE_LIST = [
             front: "blue",
             left: "red",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wbo",
@@ -67,6 +88,9 @@ export const CUBIE_LIST = [
             front: "blue",
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wgo",
@@ -77,6 +101,9 @@ export const CUBIE_LIST = [
             back: "green",
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wgr",
@@ -87,6 +114,9 @@ export const CUBIE_LIST = [
             left: "red",
             back: "green",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wb",
@@ -96,6 +126,9 @@ export const CUBIE_LIST = [
             top: "white",
             front: "blue",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wo",
@@ -105,6 +138,9 @@ export const CUBIE_LIST = [
             top: "white",
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wr",
@@ -114,6 +150,9 @@ export const CUBIE_LIST = [
             top: "white",
             left: "red",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "wg",
@@ -123,6 +162,9 @@ export const CUBIE_LIST = [
             top: "white",
             back: "green",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "og",
@@ -132,6 +174,9 @@ export const CUBIE_LIST = [
             right: "orange",
             back: "green",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "rg",
@@ -141,6 +186,9 @@ export const CUBIE_LIST = [
             left: "red",
             back: "green",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "rb",
@@ -150,6 +198,9 @@ export const CUBIE_LIST = [
             front: "blue",
             left: "red",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "bo",
@@ -159,6 +210,9 @@ export const CUBIE_LIST = [
             front: "blue",
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "by",
@@ -168,6 +222,9 @@ export const CUBIE_LIST = [
             front: "blue",
             bottom: "yellow",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "gy",
@@ -177,6 +234,9 @@ export const CUBIE_LIST = [
             back: "green",
             bottom: "yellow",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "ry",
@@ -186,6 +246,9 @@ export const CUBIE_LIST = [
             left: "red",
             bottom: "yellow",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "oy",
@@ -195,6 +258,9 @@ export const CUBIE_LIST = [
             right: "orange",
             bottom: "yellow",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "ybr",
@@ -205,6 +271,9 @@ export const CUBIE_LIST = [
             bottom: "yellow",
             left: "red",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "ybo",
@@ -215,6 +284,9 @@ export const CUBIE_LIST = [
             bottom: "yellow",
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "ygr",
@@ -225,6 +297,9 @@ export const CUBIE_LIST = [
             bottom: "yellow",
             left: "red",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
     {
         id: "ygo",
@@ -235,5 +310,8 @@ export const CUBIE_LIST = [
             bottom: "yellow",
             right: "orange",
         },
+        originalTransform: "",
+        originalCoords: {},
+        rotation: "",
     },
 ];
