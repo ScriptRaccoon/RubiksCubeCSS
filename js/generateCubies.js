@@ -12,6 +12,7 @@ export const FACE_NAMES = [
 export function generateCubies() {
     for (const cubie of CUBIE_LIST) {
         cubie.originalCoords = { ...cubie.coords };
+        cubie.originalColors = { ...cubie.colors };
         cubie.rotation = "";
         cubie.element = $("<div></div>")
             .addClass("cubie")

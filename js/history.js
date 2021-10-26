@@ -1,4 +1,5 @@
 import { addToQueue } from "./rotationQueue.js";
+import { currentStatus, STATUS } from "./status.js";
 
 let history = [];
 
@@ -14,6 +15,11 @@ export function undoRotation() {
     if (history.length == 0) {
         return;
     }
+    if (
+        currentStatus != STATUS.IDLE &&
+        currentStatus != STATUS.ROTATING
+    )
+        return;
     const lastRotation = history.pop();
     lastRotation.orientation =
         lastRotation.orientation == "+" ? "-" : "+";

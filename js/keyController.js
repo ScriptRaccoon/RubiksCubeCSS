@@ -5,7 +5,6 @@ import { undoRotation } from "./history.js";
 import { scrambleCube } from "./scrambleCube.js";
 import { resetCube } from "./resetCube.js";
 import { addToQueue } from "./rotationQueue.js";
-import { duringSolveAnimation } from "./solved.js";
 
 const KEY_MAP = {
     ArrowRight: () => rotateCube({ y: 45 }),
@@ -43,7 +42,6 @@ const KEY_MAP = {
 
 export function handleKeyDown() {
     document.addEventListener("keydown", (e) => {
-        if (duringSolveAnimation) return;
         if (KEY_MAP[e.key]) {
             KEY_MAP[e.key]();
         }

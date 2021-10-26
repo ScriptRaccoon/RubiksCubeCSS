@@ -1,9 +1,10 @@
 import { LAYER_LIST } from "./layers.js";
 import { deleteHistory } from "./history.js";
 import { rotateLayer } from "./rotateLayer.js";
+import { currentStatus, setStatus, STATUS } from "./status.js";
 
 const numberOfRotations = 50;
-const scrambleSpeed = 100;
+const scrambleSpeed = 150;
 
 function randInt(a, b) {
     return a + Math.floor((b - a) * Math.random());
@@ -14,12 +15,15 @@ function randEl(list) {
 }
 
 export function scrambleCube() {
+    if (currentStatus != STATUS.IDLE) return;
+    setStatus(STATUS.SCRAMBLING);
     deleteHistory();
     scrambleStep(0);
 }
 
 async function scrambleStep(i) {
     if (i >= numberOfRotations) {
+        setStatus(STATUS.IDLE);
         return;
     }
     await rotateLayer({
@@ -28,5 +32,5 @@ async function scrambleStep(i) {
         save: false,
         speed: scrambleSpeed,
     });
-    scrambleStep(i + 1);
+    setTimeout(() => scrambleStep(i + 1), 50);
 }

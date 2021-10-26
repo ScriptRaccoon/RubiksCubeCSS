@@ -1,7 +1,6 @@
 import { FACE_NAMES } from "./generateCubies.js";
 import { getCubiesFromLayer } from "./layers.js";
-
-export let duringSolveAnimation = false;
+import { setStatus, STATUS } from "./status.js";
 
 export function checkIfCubeIsSolved() {
     for (const face of FACE_NAMES) {
@@ -18,13 +17,13 @@ export function checkIfCubeIsSolved() {
 }
 
 function showSolveAnimation() {
-    duringSolveAnimation = true;
+    setStatus(STATUS.SOLVEANIMATION);
     $("#notification").fadeIn(1000);
     $("#cube").addClass("solved");
 }
 
 $("#notification").click(function () {
-    duringSolveAnimation = false;
+    setStatus(STATUS.IDLE);
     $(this).fadeOut(500);
     $("#cube").removeClass("solved");
 });
