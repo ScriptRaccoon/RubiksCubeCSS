@@ -83,6 +83,21 @@ body {
     transition: transform 170ms ease-in-out;
 }
 
+/* cube solved animation */
+
+#cube.solved {
+    animation: solveAnimation 50s linear infinite;
+}
+
+@keyframes solveAnimation {
+    0% {
+        transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(315deg) rotateY(405deg) rotateZ(360deg);
+    }
+}
+
 /* transparent mode */
 
 #cube.transparent .face {
@@ -177,10 +192,37 @@ body {
         rotateX(90deg);
 }
 
-.cubie .face.bottom {
+.cubie .face.down {
     transform: translateX(-50%)
         translateY(calc(-50% + 0.5 * var(--cubie-size)))
         rotateX(90deg);
+}
+
+/* notification area */
+
+#notification {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#notificationContent {
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
+    display: flex;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-size: min(80px, 10vw);
+    font-weight: bold;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
 }
 
 /* mobile devices */

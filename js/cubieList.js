@@ -15,7 +15,7 @@ export const CUBIE_LIST = [
         type: "center",
         coords: { x: 0, y: 1, z: 0 },
         colors: {
-            bottom: "yellow",
+            down: "yellow",
         },
         originalCoords: {},
         rotation: "",
@@ -220,7 +220,7 @@ export const CUBIE_LIST = [
         coords: { x: 0, y: 1, z: 1 },
         colors: {
             front: "blue",
-            bottom: "yellow",
+            down: "yellow",
         },
         originalCoords: {},
         rotation: "",
@@ -232,7 +232,7 @@ export const CUBIE_LIST = [
         coords: { x: 0, y: 1, z: -1 },
         colors: {
             back: "green",
-            bottom: "yellow",
+            down: "yellow",
         },
         originalCoords: {},
         rotation: "",
@@ -244,7 +244,7 @@ export const CUBIE_LIST = [
         coords: { x: -1, y: 1, z: 0 },
         colors: {
             left: "red",
-            bottom: "yellow",
+            down: "yellow",
         },
         originalCoords: {},
         rotation: "",
@@ -256,7 +256,7 @@ export const CUBIE_LIST = [
         coords: { x: 1, y: 1, z: 0 },
         colors: {
             right: "orange",
-            bottom: "yellow",
+            down: "yellow",
         },
         originalCoords: {},
         rotation: "",
@@ -268,7 +268,7 @@ export const CUBIE_LIST = [
         coords: { x: -1, y: 1, z: 1 },
         colors: {
             front: "blue",
-            bottom: "yellow",
+            down: "yellow",
             left: "red",
         },
         originalCoords: {},
@@ -281,7 +281,7 @@ export const CUBIE_LIST = [
         coords: { x: 1, y: 1, z: 1 },
         colors: {
             front: "blue",
-            bottom: "yellow",
+            down: "yellow",
             right: "orange",
         },
         originalCoords: {},
@@ -294,7 +294,7 @@ export const CUBIE_LIST = [
         coords: { x: -1, y: 1, z: -1 },
         colors: {
             back: "green",
-            bottom: "yellow",
+            down: "yellow",
             left: "red",
         },
         originalCoords: {},
@@ -307,7 +307,7 @@ export const CUBIE_LIST = [
         coords: { x: 1, y: 1, z: -1 },
         colors: {
             back: "green",
-            bottom: "yellow",
+            down: "yellow",
             right: "orange",
         },
         originalCoords: {},

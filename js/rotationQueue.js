@@ -1,5 +1,5 @@
-import { getCubiesFromLayer } from "./layers.js";
 import { rotateLayer } from "./rotateLayer.js";
+import { checkIfCubeIsSolved } from "./solved.js";
 
 const queue = [];
 
@@ -11,15 +11,16 @@ export function addToQueue(rotation) {
 }
 
 async function executeQueue() {
-    if (queue.length == 0 || duringRotation) return;
+    if (duringRotation) return;
+    if (queue.length == 0) {
+        checkIfCubeIsSolved();
+        return;
+    }
+
     const firstRotation = queue[0];
     duringRotation = true;
     await rotateLayer(firstRotation);
     duringRotation = false;
     queue.splice(0, 1);
-    const cubies = getCubiesFromLayer("front");
-    for (const cubie of cubies) {
-        cubie.colors = { front: "white" };
-    }
     setTimeout(executeQueue, 100);
 }

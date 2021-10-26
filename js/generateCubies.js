@@ -4,7 +4,7 @@ export const FACE_NAMES = [
     "front",
     "back",
     "top",
-    "bottom",
+    "down",
     "left",
     "right",
 ];

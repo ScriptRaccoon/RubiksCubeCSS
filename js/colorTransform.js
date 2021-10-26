@@ -6,18 +6,18 @@ colorTransform.front = {
     "+": {
         back: "back",
         front: "front",
-        top: "right",
-        right: "bottom",
-        bottom: "left",
-        left: "top",
+        top: "left",
+        left: "down",
+        down: "right",
+        right: "top",
     },
     "-": {
         back: "back",
         front: "front",
-        right: "top",
-        top: "left",
-        left: "bottom",
-        bottom: "right",
+        right: "down",
+        down: "left",
+        left: "top",
+        top: "right",
     },
 };
 
@@ -28,7 +28,7 @@ colorTransform.top = {
         front: "left",
         left: "back",
         top: "top",
-        bottom: "bottom",
+        down: "down",
     },
     "-": {
         back: "left",
@@ -36,7 +36,7 @@ colorTransform.top = {
         front: "right",
         right: "back",
         top: "top",
-        bottom: "bottom",
+        down: "down",
     },
 };
 
@@ -45,16 +45,16 @@ colorTransform.left = {
         left: "left",
         right: "right",
         top: "front",
-        front: "bottom",
-        bottom: "back",
+        front: "down",
+        down: "back",
         back: "top",
     },
     "-": {
         left: "left",
         right: "right",
         top: "back",
-        back: "bottom",
-        bottom: "front",
+        back: "down",
+        down: "front",
         front: "top",
     },
 };
@@ -62,7 +62,7 @@ colorTransform.left = {
 colorTransform.back = colorTransform.front;
 colorTransform.standing = colorTransform.front;
 
-colorTransform.bottom = colorTransform.top;
+colorTransform.down = colorTransform.top;
 colorTransform.equator = colorTransform.top;
 
 colorTransform.right = colorTransform.left;

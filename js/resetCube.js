@@ -12,8 +12,8 @@ export function resetCube() {
             .css(
                 "transform",
                 `translateX(calc(${cubie.coords.x} * var(--cubie-size)))
-             translateY(calc(${cubie.coords.y} * var(--cubie-size)))
-             translateZ(calc(${cubie.coords.z} * var(--cubie-size)))`
+                 translateY(calc(${cubie.coords.y} * var(--cubie-size)))
+                 translateZ(calc(${cubie.coords.z} * var(--cubie-size)))`
             );
         setTimeout(() => {
             cubie.element.css("transition-duration", "0s");

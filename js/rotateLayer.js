@@ -34,8 +34,8 @@ export function rotateLayer(rotation) {
                 const trafo = coordinateTransform[layer][orientation];
                 cubie.coords = trafo(cubie.coords);
                 updateCubieElement(cubie);
-                updateCubieColor(cubie, rotation);
                 $("#cubeContainer").append(cubie.element);
+                updateCubieColor(cubie, rotation);
             }
             setTimeout(resolve, 0);
         }, speed);
