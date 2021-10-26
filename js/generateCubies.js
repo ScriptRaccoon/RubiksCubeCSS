@@ -1,6 +1,6 @@
 import { CUBIE_LIST } from "./cubieList.js";
 
-const FACE_NAMES = [
+export const FACE_NAMES = [
     "front",
     "back",
     "top",

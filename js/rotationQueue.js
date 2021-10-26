@@ -1,3 +1,4 @@
+import { getCubiesFromLayer } from "./layers.js";
 import { rotateLayer } from "./rotateLayer.js";
 
 const queue = [];
@@ -16,5 +17,9 @@ async function executeQueue() {
     await rotateLayer(firstRotation);
     duringRotation = false;
     queue.splice(0, 1);
+    const cubies = getCubiesFromLayer("front");
+    for (const cubie of cubies) {
+        cubie.colors = { front: "white" };
+    }
     setTimeout(executeQueue, 100);
 }

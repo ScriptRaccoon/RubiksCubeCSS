@@ -2,6 +2,7 @@ import { saveRotation } from "./history.js";
 import { LAYER_MAP, getCubiesFromLayer } from "./layers.js";
 import { coordinateTransform } from "./coordinateTransform.js";
 import { updateCubieElement } from "./generateCubies.js";
+import { updateCubieColor } from "./colorTransform.js";
 
 export const rotationSpeed = 300;
 
@@ -33,6 +34,7 @@ export function rotateLayer(rotation) {
                 const trafo = coordinateTransform[layer][orientation];
                 cubie.coords = trafo(cubie.coords);
                 updateCubieElement(cubie);
+                updateCubieColor(cubie, rotation);
                 $("#cubeContainer").append(cubie.element);
             }
             setTimeout(resolve, 0);
