@@ -7,12 +7,10 @@ import { resetCube } from "./resetCube.js";
 import { addToQueue } from "./rotationQueue.js";
 
 const KEY_MAP = {
-    ArrowRight: () => rotateCube({ y: 45 }),
-    ArrowLeft: () => rotateCube({ y: -45 }),
-    ArrowUp: () => rotateCube({ x: 45 }),
-    ArrowDown: () => rotateCube({ x: -45 }),
-    4: () => rotateCube({ z: -45 }),
-    6: () => rotateCube({ z: 45 }),
+    ArrowRight: () => rotateCube("right"),
+    ArrowLeft: () => rotateCube("left"),
+    ArrowUp: () => rotateCube("up"),
+    ArrowDown: () => rotateCube("down"),
     f: () => addToQueue({ layer: "front", orientation: "+" }),
     F: () => addToQueue({ layer: "front", orientation: "-" }),
     b: () => addToQueue({ layer: "back", orientation: "-" }),

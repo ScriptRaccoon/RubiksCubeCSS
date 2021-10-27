@@ -80,7 +80,7 @@ body {
 #cube {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
-    transition: transform 170ms ease-in-out;
+    transition: transform 250ms ease-in-out;
 }
 
 /* cube solved animation */
