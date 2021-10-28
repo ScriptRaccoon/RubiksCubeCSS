@@ -27,12 +27,13 @@ let pointerStartTime = null;
 let pointerStartPos = null;
 
 export function enablePointerEvents(e) {
-    $("#cube").on("pointerdown", (e) => {
+    $("body").on("pointerdown", (e) => {
+        if ($("#helpToggler").prop("checked")) return;
         pointerStartTime = new Date();
         pointerStartPos = getPointerPosition(e);
     });
 
-    $("#cube").on("pointermove", (e) => {
+    $("body").on("pointermove", (e) => {
         if (
             !pointerStartTime ||
             !pointerStartPos ||

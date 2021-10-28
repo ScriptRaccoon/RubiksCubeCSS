@@ -14,6 +14,7 @@
 body {
     background-color: black;
     color: white;
+    cursor: move;
 }
 
 a {
@@ -34,6 +35,7 @@ a:hover {
     top: 0px;
     left: 0px;
     z-index: 1;
+    cursor: initial;
 }
 
 #helpToggler {
@@ -89,7 +91,6 @@ a:hover {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
     transition: transform 250ms ease-in-out;
-    cursor: move;
 }
 
 /* cube solved animation */
