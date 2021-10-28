@@ -89,6 +89,7 @@ a:hover {
     transform-style: inherit;
     transform: rotateX(-45deg) rotateY(45deg);
     transition: transform 250ms ease-in-out;
+    cursor: move;
 }
 
 /* cube solved animation */
