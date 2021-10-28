@@ -16,6 +16,14 @@ body {
     color: white;
 }
 
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: yellow;
+}
+
 /* help */
 
 #help {
