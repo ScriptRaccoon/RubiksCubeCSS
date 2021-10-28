@@ -28,13 +28,11 @@ let pointerStartPos = null;
 
 export function enablePointerEvents(e) {
     $("#cube").on("pointerdown", (e) => {
-        e.preventDefault();
         pointerStartTime = new Date();
         pointerStartPos = getPointerPosition(e);
     });
 
     $("#cube").on("pointermove", (e) => {
-        e.preventDefault();
         if (
             !pointerStartTime ||
             !pointerStartPos ||
@@ -46,17 +44,5 @@ export function enablePointerEvents(e) {
         rotateCube(dir);
         pointerStartTime = null;
         pointerStartPos = null;
-    });
-
-    $("#cube").on("pointerleave", (e) => {
-        e.preventDefault();
-    });
-
-    $("#cube").on("pointercancel", (e) => {
-        e.preventDefault();
-    });
-
-    $("#cube").on("pointerup", (e) => {
-        e.preventDefault();
     });
 }
