@@ -6,3 +6,5 @@ export function helpToggler() {
 export function transparentToggler() {
     $("#cube").toggleClass("transparent");
 }
+
+$("#helpToggler").prop("checked", false);

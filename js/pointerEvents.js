@@ -26,8 +26,9 @@ function getDirection(start, end) {
 let pointerStartTime = null;
 let pointerStartPos = null;
 
-export function enablePointerEvents(e) {
+export function enablePointerEvents() {
     $("body").on("pointerdown", (e) => {
+        if (e.target.classList.contains("infoCircle")) return;
         if ($("#helpToggler").prop("checked")) return;
         pointerStartTime = new Date();
         pointerStartPos = getPointerPosition(e);
@@ -37,7 +38,7 @@ export function enablePointerEvents(e) {
         if (
             !pointerStartTime ||
             !pointerStartPos ||
-            new Date() - pointerStartTime < 50
+            new Date() - pointerStartTime < 100
         )
             return;
         const currentPos = getPointerPosition(e);
