@@ -23,28 +23,23 @@ function getDirection(start, end) {
     return direction;
 }
 
-let pointerStartTime = null;
 let pointerStartPos = null;
 
 export function enablePointerEvents() {
     $("body").on("pointerdown", (e) => {
-        if (e.target.classList.contains("infoCircle")) return;
-        if ($("#helpToggler").prop("checked")) return;
-        pointerStartTime = new Date();
+        if (
+            e.target.classList.contains("infoCircle") ||
+            $("#helpToggler").prop("checked")
+        )
+            return;
         pointerStartPos = getPointerPosition(e);
     });
 
-    $("body").on("pointermove", (e) => {
-        if (
-            !pointerStartTime ||
-            !pointerStartPos ||
-            new Date() - pointerStartTime < 100
-        )
-            return;
+    $("body").on("pointerup", (e) => {
+        if (!pointerStartPos) return;
         const currentPos = getPointerPosition(e);
         const dir = getDirection(pointerStartPos, currentPos);
         rotateCube(dir);
-        pointerStartTime = null;
         pointerStartPos = null;
     });
 }
