@@ -26,7 +26,6 @@ export function rotateCube(direction) {
 function applyCubeTransform() {
     $("#cube").css(
         "transform",
-        `rotateX(${ROTATION.x}deg)
-         rotateY(${ROTATION.y}deg)`
+        `rotateX(${ROTATION.x}deg) rotateY(${ROTATION.y}deg)`
     );
 }
